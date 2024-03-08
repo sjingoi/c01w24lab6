@@ -13,3 +13,14 @@ services:
     image: mongo:latest 
     ports:
       - "27017:27017"
+  
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile_frontend
+    
+    image: sjingoi/quirknotes_frontend:latest
+    ports:
+      - "3000:80"
+    environment:
+      - ENV=Docker
